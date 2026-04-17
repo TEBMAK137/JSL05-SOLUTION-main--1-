@@ -19,6 +19,11 @@
   </head>
 
   <body>
+
+    <!-- Mobile menu button -->
+<button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">☰</button>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
     <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
     <nav class="side-bar" id="side-bar-div">
       <div id="side-logo-div">
@@ -31,7 +36,8 @@
       </div>
 
       <!-- Theme Toggle with Sun and Moon Icons -->
-            <div class="theme-toggle-wrapper">
+       <div class="bottom-section">
+        <div class="theme-toggle-wrapper">
                 <span class="theme-icon sun-icon">☀️</span>
                 <div class="theme-toggle-div">
                     <label class="theme-switch">
@@ -46,8 +52,8 @@
             <button id="hide-sidebar-btn" class="secondary-btn">
                 🚫 Hide Sidebar
             </button>
-        </div>
-
+       </div>   
+      </div>
     </nav>
 
     <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
@@ -71,6 +77,8 @@
       <div class="container">
         <main class="card-column-main">
           <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
+
+          <!-- TODO Column -->
           <div class="column-div" data-status="todo">
             <div id="todo-head-div" class="column-head-div">
               <span class="dot" id="todo-dot"></span>
@@ -79,6 +87,7 @@
             <!-- Tasks container for TODO -->
             <div class="tasks-container"></div>
           </div>
+
           <!-- DOING Column -->
           <div class="column-div" data-status="doing">
             <div id="doing-head-div" class="column-head-div">
@@ -88,6 +97,7 @@
             <!-- Tasks container for DOING -->
             <div class="tasks-container"></div>
           </div>
+
           <!-- DONE Column -->
           <div class="column-div" data-status="done">
             <div id="done-head-div" class="column-head-div">
@@ -97,9 +107,19 @@
             <!-- Tasks container for DONE -->
             <div class="tasks-container"></div>
           </div>
+
+           <!-- STRETCH -->
+            <div class="column-div" data-status="stretch">
+                <div id="stretch-head-div" class="column-head-div">
+                    <span class="dot" id="stretch-dot"></span>
+                    <h4 id="stretchText" class="columnHeader">STRETCH GOAL (0)</h4>
+                </div>
+                <div class="tasks-container"></div>
+            </div>
         </main>
       </div>
     </div>
+
     <!-- Modal: Displays each tasks details when the task is clicked -->
     <dialog id="task-modal">
       <form method="dialog" id="task-form">
@@ -122,6 +142,12 @@
           <option value="doing">doing</option>
           <option value="done">done</option>
         </select>
+
+        <div class="modal-actions">
+            <button type="button" class="save-btn" id="save-task-btn">Save</button>
+            <button type="button" class="delete-btn" id="delete-task-btn">Delete</button>
+        </div>
+        
       </form>
     </dialog>
     <!-- New Task Modal: Form for adding a new task. -->
