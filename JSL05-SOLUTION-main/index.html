@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;1,400&display=swap"
       rel="stylesheet"
@@ -14,7 +15,6 @@
       sizes="32x32"
       href="./assets/favicon.svg"
     />
-    <script defer src="./scripts/main.js" type="module"></script>
     <title>Kanban Task Management</title>
   </head>
 
@@ -27,7 +27,32 @@
     <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
     <nav class="side-bar" id="side-bar-div">
       <div id="side-logo-div">
-        <img id="logo" src="./assets/logo-light.svg" alt="logo-light" />
+        <svg
+          id="logo"
+          width="140"
+          height="30"
+          viewBox="0 0 140 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            width="140"
+            height="30"
+            rx="6"
+            fill="var(--primary-btn-color)"
+          />
+          <text
+            x="10"
+            y="21"
+            font-family="Plus Jakarta Sans"
+            font-weight="700"
+            font-size="14"
+            fill="white"
+          >
+            kanban
+          </text>
+        </svg>
+        <img id="logo"src="./assets/logo-light.svg" alt="logo-light" />
       </div>
 
       <div class="boards-nav-links-div" id="boards-nav-links-div">
@@ -211,5 +236,6 @@
         </div>
       </form>
     </dialog>
+    <script defer src="./scripts/main.js" type="module"></script>
   </body>
 </html>

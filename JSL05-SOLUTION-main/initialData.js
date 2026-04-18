@@ -48,7 +48,7 @@ export const initialTasks = [
   },
 ];
 
-let tasks1 = [
+let tasks = [
   {
     id: 1,
     title: "Research career options",
@@ -78,9 +78,10 @@ let tasks1 = [
 (function () {
   // / Use 'tasks' as the mutable array (initialised with initialTasks)
 
-  let tasks1 = [...initialTasks];
+  let tasks = [...initialTasks];
 
   // ---------- DOM ELEMENTS ----------
+
   const sidebar = document.getElementById("side-bar-div");
   const hideSidebarBtn = document.getElementById("hide-sidebar-btn");
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
@@ -216,6 +217,7 @@ let tasks1 = [
   };
 
   // ---------- SIDEBAR COLLAPSE ----------
+
   let isCollapsed = false;
   const toggleSidebarCollapse = () => {
     if (isCollapsed) {
@@ -267,6 +269,7 @@ let tasks1 = [
   };
 
   // ---------- EVENT LISTENERS ----------
+
   document.getElementById("save-task-btn").addEventListener("click", saveTask);
   document
     .getElementById("delete-task-btn")
